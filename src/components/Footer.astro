@@ -1,0 +1,145 @@
+---
+const year = new Date().getFullYear();
+---
+
+<section class="footer-cta">
+  <div class="wrap footer-cta-inner">
+    <div>
+      <h2>Shop, book or talk to Kuri</h2>
+      <p>Grooming, daycare, training, walking and raw dog food in Christchurch.</p>
+    </div>
+    <div class="footer-actions">
+      <a class="button light" href="https://shop.kuri.co.nz/">Shop Kuri</a>
+      <a class="button secondary" href="https://kuri.portal.gingrapp.com/">Book a Service</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>KURI</strong>
+      <p>We love dogs. Raw food, grooming, daycare, training and care for Christchurch dogs.</p>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <a href="https://shop.kuri.co.nz/">Shop Kuri</a>
+      <a href="/raw-dog-food/">Raw Dog Food</a>
+      <a href="/raw-dog-food-calculator/">Food Calculator</a>
+    </div>
+    <div>
+      <h3>Book</h3>
+      <a href="/dog-grooming-christchurch/">Dog Grooming</a>
+      <a href="/dog-grooming-christchurch/full-groom/">Full Groom</a>
+      <a href="/christchurchs-exclusive-small-doggy-daycare/">Small Dog Daycare</a>
+      <a href="/kuri-dog-training/">Dog Training</a>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <a href="tel:033555874">03 355 5874</a>
+      <a href="mailto:reception@kuri.co.nz">reception@kuri.co.nz</a>
+      <span>473 St Asaph Street, Christchurch</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© {year} Kuri and Co Limited</span>
+    <span><a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-conditions/">Terms & Conditions</a></span>
+  </div>
+</footer>
+
+<style>
+  .footer-cta {
+    padding: 72px 0;
+    background: var(--kuri-red);
+    color: var(--kuri-white);
+  }
+
+  .footer-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-cta h2 {
+    margin-bottom: 10px;
+  }
+
+  .footer-cta p {
+    max-width: 720px;
+    margin-bottom: 0;
+    color: rgb(255 255 255 / 84%);
+    font-size: 1.08rem;
+  }
+
+  .footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .footer {
+    padding: 54px 0 28px;
+    background: var(--kuri-ink);
+    color: rgb(255 255 255 / 78%);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.2fr) repeat(3, 1fr);
+    gap: 34px;
+  }
+
+  .footer strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--kuri-white);
+    font-size: 2rem;
+  }
+
+  .footer h3 {
+    color: var(--kuri-white);
+  }
+
+  .footer a,
+  .footer span {
+    display: block;
+    margin-bottom: 8px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(255 255 255 / 16%);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom span,
+  .footer-bottom a {
+    display: inline;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .footer-cta-inner,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-actions {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .footer-actions {
+      flex-direction: column;
+    }
+  }
+</style>

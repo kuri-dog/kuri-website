@@ -1,0 +1,103 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  text: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  note?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  text,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  note,
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p class="hero-copy">{text}</p>
+    <div class="hero-actions">
+      <a class="button" href={primaryHref}>{primaryLabel}</a>
+      {secondaryLabel && secondaryHref && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
+    </div>
+    {note && <p class="hero-note">{note}</p>}
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 76vh;
+    display: grid;
+    align-items: end;
+    position: relative;
+    color: var(--kuri-white);
+    background:
+      linear-gradient(90deg, rgb(27 27 27 / 84%) 0%, rgb(27 27 27 / 58%) 44%, rgb(27 27 27 / 18%) 100%),
+      url("/images/grooming-hero.webp") center right / cover no-repeat;
+  }
+
+  .hero-inner {
+    padding: 150px 0 68px;
+  }
+
+  .eyebrow {
+    margin: 0 0 14px;
+    color: var(--kuri-light);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .hero-copy {
+    max-width: 620px;
+    margin-bottom: 28px;
+    font-size: clamp(1.08rem, 2vw, 1.32rem);
+    color: rgb(255 255 255 / 90%);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-note {
+    margin: 22px 0 0;
+    max-width: 520px;
+    color: rgb(255 255 255 / 78%);
+    font-size: 0.96rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      min-height: 72vh;
+      background:
+        linear-gradient(0deg, rgb(27 27 27 / 86%) 0%, rgb(27 27 27 / 45%) 58%, rgb(27 27 27 / 18%) 100%),
+        url("/images/grooming-hero.webp") center / cover no-repeat;
+    }
+
+    .hero-inner {
+      padding-top: 128px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .hero-inner {
+      padding-bottom: 42px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+  }
+</style>

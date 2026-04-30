@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Kuri | Dog Grooming, Daycare and Raw Dog Food Christchurch"
+  description="Kuri helps Christchurch dogs eat better, feel better and have better days with grooming, daycare, training, walking and raw dog food."
+>
+  <Header />
+  <Hero
+    eyebrow="Christchurch dog care"
+    title="We love dogs"
+    text="Dog grooming, small dog daycare, training, walking and raw dog food from Kuri City in Christchurch."
+    primaryLabel="Book a Service"
+    primaryHref="https://kuri.portal.gingrapp.com/"
+    secondaryLabel="Shop Kuri"
+    secondaryHref="https://shop.kuri.co.nz/"
+  />
+  <main>
+    <section class="section">
+      <div class="wrap section-head center">
+        <h2>New Kuri site foundation</h2>
+        <p class="lead">This is the first static-site scaffold. Next we will roll the approved design system into the high-priority pages from the migration master sheet.</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

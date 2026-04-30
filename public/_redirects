@@ -1,0 +1,11 @@
+# Old WordPress/WooCommerce shop URLs redirect to Shopify.
+/shop/ https://shop.kuri.co.nz/ 301
+/cart/ https://shop.kuri.co.nz/ 301
+/checkout/ https://shop.kuri.co.nz/ 301
+/my-account/ https://shop.kuri.co.nz/ 301
+/wishlist/ https://shop.kuri.co.nz/ 301
+/online-store/ https://shop.kuri.co.nz/ 301
+/shipping-payment-info/ https://shop.kuri.co.nz/ 301
+/refund_returns/ https://shop.kuri.co.nz/ 301
+/product/* https://shop.kuri.co.nz/ 301
+

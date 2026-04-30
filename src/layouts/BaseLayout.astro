@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  noindex = import.meta.env.NETLIFY_CONTEXT !== "production",
+} = Astro.props;
+
+const canonicalUrl = new URL(canonical, Astro.site || "https://kuri.co.nz").toString();
+---
+
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

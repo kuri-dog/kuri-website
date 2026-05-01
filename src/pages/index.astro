@@ -6,42 +6,42 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Kuri | Raw Food, Grooming, Walking, Training and Small Doggy Daycare Christchurch"
-  description="Kuri helps Christchurch dogs with raw food, grooming, walking, training and small doggy daycare from 473 Saint Asaph Street."
+  title="Small Dog Daycare Christchurch | Raw Food | Kuri City"
+  description="Christchurch's only daycare built for small dogs. Raw food, grooming, walking, and training - all under one roof. 208 Google reviews. 473 St Asaph Street."
 >
   <Header />
   <Hero
-    eyebrow="Christchurch dog services"
-    title="Raw food, grooming, walking, training and small doggy daycare"
-    text="Kuri helps dogs eat well, look good and get the right everyday support. Our grooming, walking, training and raw food are for dogs of all sizes, while daycare is just for small dogs."
-    primaryLabel="Shop Raw Food"
-    primaryHref="https://shop.kuri.co.nz/"
-    secondaryLabel="Book a Service"
-    secondaryHref="https://kuri.portal.gingrapp.com/"
-    note="473 Saint Asaph Street, Christchurch. A local team for dog food, grooming, walking, training and small-dog-only daycare."
+    title="Christchurch small dog daycare, grooming, walking, training and raw food"
+    slogan="Dog care from one local team who knows your dog's name"
+    text="Doggy daycare for small dogs, plus raw food, grooming, walking, and training for dogs of all sizes - all from the same team who know your dog's name. At 473 St Asaph Street, Phillipstown."
+    primaryLabel="Book Daycare Assessment"
+    primaryHref="https://kuri.portal.gingrapp.com/"
+    secondaryLabel="Order Raw Food"
+    secondaryHref="https://shop.kuri.co.nz/"
+    note="4.9 from 208 Google reviews | Over 2,000 dogs in our care | 10 years in Christchurch"
   />
   <main>
     <section class="proof-strip" aria-label="What Kuri offers">
       <div class="wrap proof-grid">
         <div class="proof-item">
           <strong>Raw Food</strong>
-          <span>Raw meals and feeding support for dogs of all sizes.</span>
+          <span>Fresh New Zealand raw meals, pre-portioned and ready to order online.</span>
         </div>
         <div class="proof-item">
-          <strong>Grooming</strong>
-          <span>Full grooms, bath and tidy services, and coat care for dogs of all sizes.</span>
+          <strong>Doggy Daycare</strong>
+          <span>Small dogs only. Calm groups, familiar staff, and a routine dogs learn to trust.</span>
         </div>
         <div class="proof-item">
-          <strong>Small Doggy Daycare</strong>
-          <span>A small-dog-only daycare environment in Christchurch.</span>
+          <strong>Dog Grooming</strong>
+          <span>Healthy coats, careful handling, and relaxed dogs walking out tidy.</span>
         </div>
         <div class="proof-item">
           <strong>Dog Walking</strong>
-          <span>Local walks for dogs who need regular exercise and company.</span>
+          <span>A familiar face, a consistent routine, and someone who notices when something is off.</span>
         </div>
         <div class="proof-item">
           <strong>Dog Training</strong>
-          <span>Practical training support for better everyday behaviour.</span>
+          <span>Positive reinforcement for puppies and adults, building real-world confidence beyond tricks at home.</span>
         </div>
       </div>
     </section>
@@ -49,39 +49,42 @@ import Footer from "../components/Footer.astro";
     <section class="section">
       <div class="wrap section-head">
         <h2>Choose the part of Kuri you need</h2>
-        <p class="lead">Shop raw food, book a groom, organise a walk, ask about training, or explore our small-dog-only daycare. Kuri brings the main parts of everyday dog life together in one Christchurch team.</p>
+        <p class="lead">Book small-dog-only daycare, order raw food, book a groom, organise a walk, or ask about training. Kuri brings the main parts of everyday dog life together in one Christchurch team.</p>
       </div>
 
       <div class="service-grid">
         <article class="service-card featured">
-          <span class="service-kicker">Most direct revenue path</span>
-          <h3>Raw Dog Food</h3>
-          <p>Frozen, pre-portioned raw food with local guidance and a straightforward path into the shop.</p>
-          <a class="button" href="https://shop.kuri.co.nz/">Shop Raw Food</a>
+          <div class="service-image">
+            <img src="/images/daycare-card.webp" alt="Small dogs enjoying daycare at Kuri" loading="lazy" onerror="this.closest('.service-image').remove()" />
+          </div>
+          <span class="service-kicker">Small dogs only</span>
+          <h3>Doggy Daycare</h3>
+          <p>Small dogs only. Always. Calm playgroups, consistent staff, and a daily routine your dog learns to trust. Christchurch's only daycare built from the ground up for small breeds.</p>
+          <a class="button" href="https://kuri.portal.gingrapp.com/">Book a Daycare Assessment</a>
         </article>
 
         <article class="service-card">
           <h3>Dog Grooming</h3>
-          <p>Calm, practical grooming in Christchurch for dogs of all sizes, including full grooms for dogs who need more than a wash.</p>
-          <a class="button ghost" href="/dog-grooming-christchurch/">View Grooming</a>
+          <p>A good groom is not just about looks. Regular grooming catches skin issues early, keeps coats healthy, and when it is done right, your dog walks out relaxed, not stressed.</p>
+          <a class="button ghost" href="/dog-grooming-christchurch/">Book a Groom</a>
         </article>
 
         <article class="service-card">
-          <h3>Small Doggy Daycare</h3>
-          <p>A small-dog-only daycare environment for owners who want a calmer, more appropriate group setting.</p>
-          <a class="button ghost" href="/christchurchs-exclusive-small-doggy-daycare/">Explore Daycare</a>
+          <h3>Raw Dog Food</h3>
+          <p>Made fresh in New Zealand. Pre-portioned into medallions. Delivered to your door. No prep, no recipes, no guesswork - just simple raw feeding.</p>
+          <a class="button ghost" href="https://shop.kuri.co.nz/">Order Raw Food</a>
         </article>
 
         <article class="service-card">
           <h3>Dog Walking</h3>
-          <p>Local dog walking for dogs who need exercise, company and a reliable routine during the week.</p>
-          <a class="button ghost" href="/dog-walking/">View Walking</a>
+          <p>Your dog does not just need a walk. They need a familiar face, a consistent routine, and someone who actually notices when something is off.</p>
+          <a class="button ghost" href="/dog-walking/">Book a Walk</a>
         </article>
 
         <article class="service-card">
           <h3>Dog Training</h3>
-          <p>Practical training support for everyday behaviour, confidence and better communication with your dog.</p>
-          <a class="button ghost" href="/kuri-dog-training/">View Training</a>
+          <p>A well-trained dog is not just easier to live with - they are a calmer, happier dog. Our training supports puppies and adults with real-world confidence, not just tricks that work at home.</p>
+          <a class="button ghost" href="/kuri-dog-training/">Book Training</a>
         </article>
       </div>
     </section>
@@ -90,30 +93,35 @@ import Footer from "../components/Footer.astro";
       <div class="wrap split">
         <div>
           <div class="section-head">
-            <h2>Kuri should feel broader than one service</h2>
-            <p class="lead">The site needs to communicate that Kuri does a lot for dogs without becoming vague. The balance here is simple: lead with real food commercially, but show the services with equal clarity and confidence.</p>
+            <h2>Most dog services are built for every dog. Ours aren't.</h2>
+            <p class="lead">Kuri City is Christchurch's only daycare designed specifically for small breeds. No big dogs. No chaos. Just calm, safe playgroups where a 5kg cavoodle is not competing with a labrador for space.</p>
           </div>
 
           <div class="belief-list">
             <div>
-              <h3>Food matters</h3>
-              <p>Raw food is a major part of the business and should stay highly visible throughout the site.</p>
+              <h3>Small dogs need the right environment</h3>
+              <p>Small dogs have different play styles, different stress responses, and different space needs. A mixed-size environment can create anxiety for smaller breeds, even in well-run daycares.</p>
             </div>
             <div>
-              <h3>Services matter too</h3>
-              <p>Grooming, walking and training are for dogs of all sizes, while Small Doggy Daycare is a small-dog-only offer.</p>
+              <h3>Daycare is small-dog-only</h3>
+              <p>We built Kuri specifically around calm, appropriate groups for small dogs. It is why many dogs come back with waggy tails instead of worn-out nerves.</p>
             </div>
             <div>
-              <h3>Small dogs matter</h3>
-              <p>Kuri's local difference is strongest when it speaks clearly to owners who want thoughtful care for smaller dogs.</p>
+              <h3>The rest of Kuri is for all dogs</h3>
+              <p>Raw food, grooming, walking and training are available for dogs of all sizes, with the same practical care from one local Christchurch team.</p>
             </div>
           </div>
         </div>
 
         <aside class="feature-panel">
-          <span class="panel-kicker">Why people stay with Kuri</span>
-          <h3>One local team, multiple ways to help</h3>
-          <p>Owners can buy better food, book a groom, organise a walk, ask about training or join small-dog-only daycare without feeling like they are dealing with separate businesses.</p>
+          <span class="panel-kicker">Proof points</span>
+          <h3>Trusted by Christchurch dog owners</h3>
+          <div class="metric-list">
+            <span><strong class="dynamic-count rolling-count" data-base="2000" data-min-daily="10" data-max-daily="15" data-start-date="2026-05-01" data-seed="dogs-in-care" data-suffix="+">2,000+</strong> dogs in our care</span>
+            <span><strong class="rolling-count" data-target="208">208</strong> 5 star Google reviews</span>
+            <span><strong class="rolling-count" data-target="10">10</strong> years in Christchurch</span>
+            <span><strong class="dynamic-count rolling-count" data-base="1000" data-min-daily="10" data-max-daily="25" data-start-date="2026-05-01" data-seed="dogs-fed-raw-food" data-suffix="+">1,000+</strong> dogs fed raw food</span>
+          </div>
           <a class="button light" href="/about-us/">About Kuri</a>
         </aside>
       </div>
@@ -126,13 +134,15 @@ import Footer from "../components/Footer.astro";
         </div>
         <div>
           <div class="section-head">
-            <h2>Raw food gets the commercial spotlight</h2>
-            <p class="lead">This section exists to support the strongest money pathway without letting the whole homepage collapse into a shop front.</p>
+            <h2>What your dog eats matters more than most owners realise.</h2>
+            <p class="lead">Kuri raw food is made fresh in New Zealand, pre-portioned, and delivered to your door across Canterbury.</p>
           </div>
-          <p>Kuri raw food should be easy to understand: real ingredients, practical feeding, easier ordering, and a clear route into the shop. That matters commercially, and it also strengthens the trust story for the rest of the business.</p>
+          <p>Most dog food is heavily processed and high in starch. Kuri raw food comes in pre-portioned medallions, so there is no measuring, no recipes, and no defrost panic at 6pm. Take it from the freezer the night before, and it is ready in the morning.</p>
+          <blockquote>"My dog has been on the Kuri raw food for 8 years. His coat is amazing."</blockquote>
+          <p class="proof-line">Over 1,000 dogs fed. Most owners see coat, energy, and stool changes within four weeks.</p>
           <div class="cta-row">
-            <a class="button" href="/raw-dog-food/">Learn About Raw Food</a>
-            <a class="button outline-dark" href="https://shop.kuri.co.nz/">Go to Shop</a>
+            <a class="button" href="https://shop.kuri.co.nz/">Try the Starter Pack</a>
+            <a class="button outline-dark" href="/raw-dog-food/">How Raw Feeding Works</a>
           </div>
         </div>
       </div>
@@ -141,29 +151,235 @@ import Footer from "../components/Footer.astro";
     <section class="section reviews-section">
       <div class="wrap">
         <div class="section-head center">
-          <h2>The homepage should send people somewhere useful</h2>
-          <p class="lead">This is the working homepage pattern: broad enough to explain Kuri, direct enough to move people toward shopping, booking, calling or learning more.</p>
+          <h2>What Christchurch dog owners say.</h2>
+          <p class="lead">Real feedback from customers who trust Kuri with daycare, grooming and food.</p>
         </div>
 
         <div class="review-grid">
           <article class="review-card">
-            <h3>For shoppers</h3>
-            <p>Lead them toward raw food with enough trust and clarity that the shop feels like the natural next click.</p>
+            <p>"Our dogs are always happy and excited when they know the car is near Kuri. They go in wagging and come out wagging. That's high praise."</p>
+            <strong>Sue Bridges</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </article>
           <article class="review-card">
-            <h3>For service seekers</h3>
-            <p>Make grooming, walking, training and Small Doggy Daycare easy to find, with clear booking pathways from the homepage.</p>
+            <p>"My Franklin absolutely adores going to daycare here. You can tell they really care - mental stimulation, cuddles, and lots of fun throughout the day."</p>
+            <strong>Beccy Thwaite</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </article>
           <article class="review-card">
-            <h3>For first-time visitors</h3>
-            <p>Make it obvious that Kuri is a Christchurch dog-care brand, not just a product site and not just one service.</p>
+            <p>"Shannan and her grooming team cannot be beaten. She is amazing at what she does and how she interacts with my dog."</p>
+            <strong>Mark Johnston</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="section">
+      <div class="wrap split pricing-split">
+        <div>
+          <div class="section-head">
+            <h2>Daycare pricing. No surprises.</h2>
+            <p class="lead">Casual bookings welcome. Regular spots available for weekly attendance.</p>
+          </div>
+          <p>Spaces are limited. We keep our groups small on purpose - it is part of what makes Kuri different. If you are interested in a regular spot, book an assessment and we will let you know what is available.</p>
+          <a class="button" href="https://kuri.portal.gingrapp.com/">Book a Daycare Assessment</a>
+        </div>
+
+        <div class="price-card">
+          <div><span>Casual full day</span><strong>$56</strong></div>
+          <div><span>Casual half day</span><strong>$44</strong></div>
+          <div><span>Two dogs, full day</span><strong>$95</strong></div>
+          <div><span>Two dogs, half day</span><strong>$72</strong></div>
+          <p>Half days: Morning 7.00am-12.30pm. Afternoon 12.30pm-6.00pm.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="wrap final-cta-inner">
+        <div>
+          <h2>Your dog deserves somewhere they actually look forward to going.</h2>
+          <p>Come and see Kuri City for yourself. We are at 473 St Asaph Street, Phillipstown - about five minutes from the CBD. Free parking on site.</p>
+        </div>
+        <div class="cta-row">
+          <a class="button light" href="https://kuri.portal.gingrapp.com/">Book Now</a>
+          <a class="button secondary" href="tel:+6433555874">Call us: (03) 355 5874</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq-section">
+      <div class="wrap">
+        <div class="section-head center">
+          <h2>Questions people ask about Kuri.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>What makes Kuri City different from other dog daycares in Christchurch?</summary>
+            <p>Kuri City is Christchurch's only daycare designed exclusively for small dogs. Groups are kept small and calm, with consistent staff who know each dog by name. With over 10 years of operation and 208 Google reviews, it is one of Christchurch's most trusted dog care centres.</p>
+          </details>
+          <details>
+            <summary>Does Kuri City accept large dogs at daycare?</summary>
+            <p>No. Daycare at Kuri City is for small dogs only. Small and large breeds have different play styles and stress responses. Kuri's grooming, walking, training, and raw food services are open to all breeds and sizes.</p>
+          </details>
+          <details>
+            <summary>How does Kuri raw dog food work?</summary>
+            <p>Kuri raw food comes pre-portioned in medallions. You order online at shop.kuri.co.nz and it is delivered frozen to your door across Canterbury. No preparation required - thaw overnight, serve in the morning.</p>
+          </details>
+          <details>
+            <summary>How much does doggy daycare cost at Kuri City Christchurch?</summary>
+            <p>A casual full day at Kuri City costs $56. A half day is $44. Two dogs for a full day is $95. Morning half days run 7.00am-12.30pm; afternoons run 12.30pm-6.00pm.</p>
+          </details>
+          <details>
+            <summary>How do I start feeding my dog raw food in New Zealand?</summary>
+            <p>Start with the Kuri Raw Starter Pack, available at shop.kuri.co.nz. It includes pre-portioned medallions and feeding guidance. Most owners switch gradually over 7-10 days.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
   <Footer />
+
+  <script>
+    const formatCounter = (value: number, suffix: string) =>
+      `${Math.max(0, Math.round(value)).toLocaleString("en-NZ")}${suffix || ""}`;
+
+    const msPerDay = 24 * 60 * 60 * 1000;
+
+    const utcDateFromString = (dateString: string) => {
+      const [year, month, day] = dateString.split("-").map(Number);
+      return Date.UTC(year, month - 1, day);
+    };
+
+    const currentUtcDate = () => {
+      const now = new Date();
+      return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    };
+
+    const stableDailyAmount = (seed: string, dateStamp: number, min: number, max: number) => {
+      const source = `${seed}:${dateStamp}`;
+      let hash = 2166136261;
+      for (let index = 0; index < source.length; index += 1) {
+        hash ^= source.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+      }
+
+      return min + (Math.abs(hash) % (max - min + 1));
+    };
+
+    const weekdayGrowthSince = (options: {
+      startDate: string;
+      min: number;
+      max: number;
+      seed: string;
+    }) => {
+      const start = utcDateFromString(options.startDate);
+      const today = currentUtcDate();
+      let total = 0;
+
+      for (let dateStamp = start + msPerDay; dateStamp <= today; dateStamp += msPerDay) {
+        const day = new Date(dateStamp).getUTCDay();
+        if (day === 0 || day === 6) continue;
+        total += stableDailyAmount(options.seed, dateStamp, options.min, options.max);
+      }
+
+      return total;
+    };
+
+    const getCounterTarget = (counter: HTMLElement) => {
+      const suffix = counter.dataset.suffix || "";
+      if (counter.dataset.base) {
+        const base = Number(counter.dataset.base || 0);
+        const min = Number(counter.dataset.minDaily || 0);
+        const max = Number(counter.dataset.maxDaily || min);
+        const startDate = counter.dataset.startDate || "2026-05-01";
+        const seed = counter.dataset.seed || counter.dataset.base || "kuri-counter";
+        const growth = weekdayGrowthSince({ startDate, min, max, seed });
+        return formatCounter(base + growth, suffix);
+      }
+
+      return formatCounter(Number(counter.dataset.target || counter.textContent || 0), suffix);
+    };
+
+    const buildRollingCounter = (counter: HTMLElement, value: string) => {
+      counter.setAttribute("aria-label", value);
+      counter.textContent = "";
+
+      let digitIndex = 0;
+      value.split("").forEach((character) => {
+        if (/\d/.test(character)) {
+          const reel = document.createElement("span");
+          const stack = document.createElement("span");
+          reel.className = "digit-reel";
+          reel.setAttribute("aria-hidden", "true");
+          stack.className = "digit-stack";
+          stack.style.transitionDelay = `${digitIndex * 45}ms`;
+          stack.dataset.finalIndex = "20";
+
+          for (let cycle = 0; cycle < 2; cycle += 1) {
+            for (let number = 0; number <= 9; number += 1) {
+              const digit = document.createElement("span");
+              digit.textContent = String(number);
+              stack.append(digit);
+            }
+          }
+
+          const final = document.createElement("span");
+          final.textContent = character;
+          stack.append(final);
+          reel.append(stack);
+          counter.append(reel);
+          digitIndex += 1;
+          return;
+        }
+
+        const staticCharacter = document.createElement("span");
+        staticCharacter.className = "static-char";
+        staticCharacter.setAttribute("aria-hidden", "true");
+        staticCharacter.textContent = character;
+        counter.append(staticCharacter);
+      });
+    };
+
+    const rollCounter = (counter: HTMLElement) => {
+      counter.classList.add("is-rolling");
+
+      counter.querySelectorAll<HTMLElement>(".digit-stack").forEach((stack) => {
+        const finalIndex = Number(stack.dataset.finalIndex || 0);
+        stack.style.transform = `translateY(-${finalIndex}em)`;
+      });
+    };
+
+    const counters = [...document.querySelectorAll<HTMLElement>(".rolling-count")];
+
+    counters.forEach((counter) => {
+      const target = getCounterTarget(counter);
+      buildRollingCounter(counter, target);
+    });
+
+    const rollPanel = (panel: Element) => {
+      panel.querySelectorAll<HTMLElement>(".rolling-count").forEach((counter) => rollCounter(counter));
+    };
+
+    const panels = [...document.querySelectorAll<HTMLElement>(".feature-panel")];
+    const checkPanels = () => {
+      panels.forEach((panel) => {
+        if (panel.dataset.rolled === "true") return;
+        const rect = panel.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight * 0.82 && rect.bottom > window.innerHeight * 0.16;
+        if (!isInView) return;
+        panel.dataset.rolled = "true";
+        rollPanel(panel);
+      });
+    };
+
+    window.addEventListener("scroll", checkPanels, { passive: true });
+    window.addEventListener("resize", checkPanels);
+    requestAnimationFrame(checkPanels);
+    window.setTimeout(checkPanels, 250);
+  </script>
 </BaseLayout>
 
 <style>
@@ -180,7 +396,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .proof-item {
-    min-height: 156px;
+    min-height: 176px;
     padding: 22px;
     background: var(--kuri-red);
   }
@@ -196,7 +412,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .proof-item span {
-    color: rgb(255 255 255 / 82%);
+    color: rgb(255 255 255 / 84%);
     font-size: 0.98rem;
   }
 
@@ -204,6 +420,18 @@ import Footer from "../components/Footer.astro";
     display: grid;
     grid-template-columns: minmax(270px, 0.95fr) repeat(2, minmax(240px, 1fr));
     gap: 16px;
+    width: min(var(--container), calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  .service-card,
+  .review-card,
+  .price-card,
+  .faq-list details {
+    border: 1px solid var(--kuri-line);
+    border-radius: 8px;
+    background: var(--kuri-white);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
   }
 
   .service-card,
@@ -212,10 +440,6 @@ import Footer from "../components/Footer.astro";
     flex-direction: column;
     min-height: 100%;
     padding: 24px;
-    border: 1px solid var(--kuri-line);
-    border-radius: 8px;
-    background: var(--kuri-white);
-    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
   }
 
   .service-card.featured {
@@ -224,10 +448,26 @@ import Footer from "../components/Footer.astro";
     border-color: var(--kuri-red);
   }
 
+  .service-image {
+    margin: -24px -24px 22px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    aspect-ratio: 16 / 10;
+    background: var(--kuri-line);
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .service-card p,
   .review-card p,
   .belief-list p,
-  .feature-panel p {
+  .feature-panel p,
+  .price-card p,
+  .faq-list p {
     color: var(--kuri-grey);
   }
 
@@ -246,20 +486,6 @@ import Footer from "../components/Footer.astro";
   .button.outline-dark {
     color: var(--kuri-ink);
     border-color: var(--kuri-ink);
-  }
-
-  .dual-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: auto;
-    padding-top: 8px;
-  }
-
-  .text-link {
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--kuri-red);
   }
 
   .split {
@@ -285,10 +511,74 @@ import Footer from "../components/Footer.astro";
     color: var(--kuri-white);
   }
 
+  .metric-list {
+    display: grid;
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .metric-list span {
+    color: rgb(255 255 255 / 78%);
+  }
+
+  .metric-list strong {
+    display: block;
+    color: var(--kuri-white);
+    font-size: 2rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rolling-count {
+    height: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .rolling-count :global(.digit-reel),
+  .rolling-count :global(.static-char) {
+    display: inline-block;
+    height: 1em;
+    vertical-align: top;
+  }
+
+  .rolling-count :global(.digit-stack) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transform: translateY(0);
+    transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .rolling-count :global(.digit-stack span) {
+    display: block;
+    height: 1em;
+    line-height: 1;
+  }
+
+  .rolling-count.is-rolling :global(.digit-reel:nth-child(2n) .digit-stack) {
+    transition-duration: 1.38s;
+  }
+
   .image-panel img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
+  }
+
+  blockquote {
+    margin: 22px 0;
+    padding: 18px 20px;
+    border-left: 4px solid var(--kuri-red);
+    background: var(--kuri-light);
+    color: var(--kuri-ink);
+    font-weight: 700;
+  }
+
+  .proof-line {
+    font-weight: 800;
+    color: var(--kuri-ink);
   }
 
   .cta-row {
@@ -298,7 +588,8 @@ import Footer from "../components/Footer.astro";
     margin-top: 22px;
   }
 
-  .reviews-section {
+  .reviews-section,
+  .faq-section {
     background: linear-gradient(180deg, var(--kuri-light) 0%, var(--kuri-white) 100%);
   }
 
@@ -308,11 +599,85 @@ import Footer from "../components/Footer.astro";
     gap: 16px;
   }
 
+  .review-card strong {
+    margin-top: auto;
+  }
+
+  .review-card span {
+    color: #f4b400;
+    font-size: 1.1rem;
+  }
+
+  .pricing-split {
+    align-items: start;
+  }
+
+  .price-card {
+    padding: 26px;
+  }
+
+  .price-card div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--kuri-line);
+  }
+
+  .price-card strong {
+    color: var(--kuri-red);
+    font-size: 1.45rem;
+  }
+
+  .price-card p {
+    margin: 18px 0 0;
+  }
+
+  .final-cta {
+    background: var(--kuri-red);
+    color: var(--kuri-white);
+  }
+
+  .final-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .final-cta p {
+    max-width: 720px;
+    margin: 0;
+    color: rgb(255 255 255 / 86%);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-list details {
+    padding: 18px 22px;
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    color: var(--kuri-ink);
+    font-weight: 800;
+  }
+
+  .faq-list p {
+    margin: 12px 0 0;
+  }
+
   @media (max-width: 980px) {
     .service-grid,
     .review-grid,
     .split,
-    .split.reverse {
+    .split.reverse,
+    .final-cta-inner {
       grid-template-columns: 1fr 1fr;
     }
 
@@ -339,12 +704,14 @@ import Footer from "../components/Footer.astro";
     .service-grid,
     .review-grid,
     .split,
-    .split.reverse {
+    .split.reverse,
+    .final-cta-inner {
       grid-template-columns: 1fr;
     }
 
     .proof-grid {
       grid-template-columns: 1fr;
+      gap: 0;
       overflow-x: visible;
     }
 
@@ -352,16 +719,11 @@ import Footer from "../components/Footer.astro";
       grid-column: auto;
     }
 
-    .proof-grid {
-      gap: 0;
-    }
-
     .proof-item {
       border-bottom: 1px solid rgb(255 255 255 / 16%);
     }
 
-    .cta-row,
-    .dual-links {
+    .cta-row {
       flex-direction: column;
     }
   }

@@ -46,16 +46,16 @@ const year = new Date().getFullYear();
 
     <div>
       <h3>Opening hours</h3>
-      <span class="hours-line"><strong>City Centre or online</strong></span>
+      <span class="hours-line"><strong>City Centre</strong></span>
       <span class="hours-line">City Centre (Sales)</span>
       <span class="hours-line">Mon to Fri - 7am to 6pm</span>
       <span class="hours-line">Sat - 10am to 2pm (store only)</span>
-      <a class="review-badge" href="https://www.google.com/search?q=Kuri+City+Christchurch" target="_blank" rel="noopener" aria-label="Google Business Profile">
+      <a class="review-badge" href="https://www.google.com/search?q=Kuri+City+Christchurch+reviews" target="_blank" rel="noopener" aria-label="Read Kuri Google reviews">
         <span class="google-g" aria-hidden="true">G</span>
         <span class="review-score">4.9</span>
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span class="review-number">208</span>
-        <span class="review-label">reviews</span>
+        <span class="review-label">Read our reviews</span>
       </a>
     </div>
   </div>
@@ -184,7 +184,8 @@ const year = new Date().getFullYear();
     margin-top: 18px;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 6px 12px;
+    column-gap: 6px;
+    row-gap: 4px;
     align-items: baseline;
     width: max-content;
     max-width: 100%;
@@ -205,7 +206,7 @@ const year = new Date().getFullYear();
     display: inline-block;
     margin: 0;
     color: var(--kuri-red);
-    font-size: 2rem;
+    font-size: 1.85rem;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0;
@@ -240,7 +241,7 @@ const year = new Date().getFullYear();
 
   .footer a.review-badge .review-label {
     display: block;
-    grid-column: 1 / 2;
+    grid-column: 1 / -1;
     margin: -2px 0 0;
     color: rgb(255 255 255 / 58%);
     font-size: 0.95rem;

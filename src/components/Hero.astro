@@ -1,7 +1,7 @@
 ---
 interface Props {
-  eyebrow: string;
   title: string;
+  slogan?: string;
   text: string;
   primaryLabel: string;
   primaryHref: string;
@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-  eyebrow,
   title,
+  slogan,
   text,
   primaryLabel,
   primaryHref,
@@ -24,8 +24,8 @@ const {
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>
+    {slogan && <h2 class="hero-slogan">{slogan}</h2>}
     <p class="hero-copy">{text}</p>
     <div class="hero-actions">
       <a class="button" href={primaryHref}>{primaryLabel}</a>
@@ -51,11 +51,20 @@ const {
     padding: 150px 0 68px;
   }
 
-  .eyebrow {
-    margin: 0 0 14px;
-    color: var(--kuri-light);
-    font-weight: 800;
-    text-transform: uppercase;
+  .hero h1 {
+    max-width: 760px;
+    margin-bottom: 12px;
+    color: rgb(255 255 255 / 88%);
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+    line-height: 1.18;
+  }
+
+  .hero-slogan {
+    max-width: 900px;
+    margin-bottom: 22px;
+    color: var(--kuri-white);
+    font-size: clamp(2.8rem, 6.2vw, 5.6rem);
+    line-height: 0.95;
   }
 
   .hero-copy {

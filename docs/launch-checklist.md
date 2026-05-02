@@ -36,7 +36,7 @@ This checklist controls the final launch from WordPress/HostGator to the static 
 - `/`
 - `/dog-grooming-christchurch/`
 - `/dog-grooming-christchurch/full-groom/`
-- `/contact/`
+- `/contact-us/`
 - `/kuri-city-blog/`
 - `/raw-dog-food/`
 - `/christchurchs-exclusive-small-doggy-daycare/`

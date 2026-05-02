@@ -17,7 +17,7 @@ This file tracks page rebuild status inside the repo. The source of truth for th
 | Homepage | `/` | Draft built | Needs review | Not implemented | Same URL | In progress |
 | Grooming hub | `/dog-grooming-christchurch/` | Draft built | Needs review | Not implemented | Same URL | In review |
 | Full Groom | `/dog-grooming-christchurch/full-groom/` | Draft built | Needs review | Not implemented | Same URL | In review |
-| Contact | `/contact/` | Draft built | Needs review | Not implemented | New URL, old `/contact-us/` still needs decision | In review |
+| Contact | `/contact-us/` | Draft built | Needs review | Not implemented | Same URL; `/contact/` redirects here | In review |
 | Blog index | `/kuri-city-blog/` | Draft built | Needs review | Not implemented | Same URL | In review |
 | Daycare | `/christchurchs-exclusive-small-doggy-daycare/` | Not started | Not started | Not implemented | Same URL | Pending |
 | Raw Food | `/raw-dog-food/` | Not started | Not started | Not implemented | Same URL | Pending |

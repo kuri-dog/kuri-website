@@ -21,35 +21,27 @@ import Footer from "../components/Footer.astro";
     note="4.9 from 208 Google reviews | Over 2,000 dogs in our care | 10 years in Christchurch"
   />
   <main>
-    <section class="proof-strip" aria-label="What Kuri offers">
-      <div class="wrap proof-grid">
-        <div class="proof-item">
-          <strong>Raw Food</strong>
-          <span>Fresh New Zealand raw meals, pre-portioned and ready to order online.</span>
+    <section class="trust-strip" aria-label="Kuri trust signals">
+      <div class="wrap trust-grid">
+        <div class="trust-item">
+          <strong>4.9</strong>
+          <span>Google rating</span>
         </div>
-        <div class="proof-item">
-          <strong>Doggy Daycare</strong>
-          <span>Small dogs only. Calm groups, familiar staff, and a routine dogs learn to trust.</span>
+        <div class="trust-item">
+          <strong>208</strong>
+          <span>Google reviews</span>
         </div>
-        <div class="proof-item">
-          <strong>Dog Grooming</strong>
-          <span>Healthy coats, careful handling, and relaxed dogs walking out tidy.</span>
-        </div>
-        <div class="proof-item">
-          <strong>Dog Walking</strong>
-          <span>A familiar face, a consistent routine, and someone who notices when something is off.</span>
-        </div>
-        <div class="proof-item">
-          <strong>Dog Training</strong>
-          <span>Positive reinforcement for puppies and adults, building real-world confidence beyond tricks at home.</span>
+        <div class="trust-item">
+          <strong>10</strong>
+          <span>Years in Christchurch</span>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap section-head">
-        <h2>Choose the part of Kuri you need</h2>
-        <p class="lead">Book small-dog-only daycare, order raw food, book a groom, organise a walk, or ask about training. Kuri brings the main parts of everyday dog life together in one Christchurch team.</p>
+        <h2>Everything your dog needs</h2>
+        <p class="lead">Book small-dog-only daycare, order raw food, book a groom, organise a walk, or ask about training.</p>
       </div>
 
       <div class="service-grid">
@@ -59,31 +51,56 @@ import Footer from "../components/Footer.astro";
           </div>
           <span class="service-kicker">Small dogs only</span>
           <h3>Doggy Daycare</h3>
-          <p>Small dogs only. Always. Calm playgroups, consistent staff, and a daily routine your dog learns to trust. Christchurch's only daycare built from the ground up for small breeds.</p>
+          <p>Calm daycare for small dogs who need the right group.</p>
+          <ul class="service-points">
+            <li>Small dogs only</li>
+            <li>Familiar staff</li>
+            <li>Structured daily routine</li>
+          </ul>
           <a class="button" href="https://kuri.portal.gingrapp.com/">Book a Daycare Assessment</a>
         </article>
 
         <article class="service-card">
           <h3>Dog Grooming</h3>
-          <p>A good groom is not just about looks. Regular grooming catches skin issues early, keeps coats healthy, and when it is done right, your dog walks out relaxed, not stressed.</p>
+          <p>Careful grooming for healthy coats and calmer dogs.</p>
+          <ul class="service-points">
+            <li>Full grooms</li>
+            <li>Bath and tidy</li>
+            <li>Puppy groom support</li>
+          </ul>
           <a class="button ghost" href="/dog-grooming-christchurch/">Book a Groom</a>
         </article>
 
         <article class="service-card">
           <h3>Raw Dog Food</h3>
-          <p>Made fresh in New Zealand. Pre-portioned into medallions. Delivered to your door. No prep, no recipes, no guesswork - just simple raw feeding.</p>
+          <p>Fresh New Zealand raw meals made simple.</p>
+          <ul class="service-points">
+            <li>Pre-portioned medallions</li>
+            <li>No recipes or guesswork</li>
+            <li>Delivered to your door</li>
+          </ul>
           <a class="button ghost" href="https://shop.kuri.co.nz/">Order Raw Food</a>
         </article>
 
         <article class="service-card">
           <h3>Dog Walking</h3>
-          <p>Your dog does not just need a walk. They need a familiar face, a consistent routine, and someone who actually notices when something is off.</p>
+          <p>Reliable local walks with a familiar face.</p>
+          <ul class="service-points">
+            <li>Regular exercise</li>
+            <li>Consistent routine</li>
+            <li>Careful check-ins</li>
+          </ul>
           <a class="button ghost" href="/dog-walking/">Book a Walk</a>
         </article>
 
         <article class="service-card">
           <h3>Dog Training</h3>
-          <p>A well-trained dog is not just easier to live with - they are a calmer, happier dog. Our training supports puppies and adults with real-world confidence, not just tricks that work at home.</p>
+          <p>Positive training for puppies and adults.</p>
+          <ul class="service-points">
+            <li>Real-world confidence</li>
+            <li>Everyday behaviour</li>
+            <li>Clear communication</li>
+          </ul>
           <a class="button ghost" href="/kuri-dog-training/">Book Training</a>
         </article>
       </div>
@@ -383,25 +400,42 @@ import Footer from "../components/Footer.astro";
 </BaseLayout>
 
 <style>
-  .proof-strip {
-    background: var(--kuri-red);
-    color: var(--kuri-white);
+  .trust-strip {
+    background: var(--kuri-light);
+    border-bottom: 1px solid var(--kuri-line);
   }
 
-  .proof-grid {
+  .trust-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
-    background: rgb(255 255 255 / 18%);
+    background: var(--kuri-line);
   }
 
-  .proof-item {
-    min-height: 176px;
-    padding: 22px;
-    background: var(--kuri-red);
+  .trust-item {
+    min-height: 88px;
+    padding: 18px 14px;
+    background: var(--kuri-light);
+    text-align: center;
   }
 
-  .proof-item strong,
+  .trust-item strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--kuri-red);
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 4vw, 2.15rem);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .trust-item span {
+    color: var(--kuri-ink);
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
   .service-kicker,
   .panel-kicker {
     display: block;
@@ -409,11 +443,6 @@ import Footer from "../components/Footer.astro";
     font-size: 0.95rem;
     font-weight: 800;
     text-transform: uppercase;
-  }
-
-  .proof-item span {
-    color: rgb(255 255 255 / 84%);
-    font-size: 0.98rem;
   }
 
   .service-grid {
@@ -463,12 +492,26 @@ import Footer from "../components/Footer.astro";
   }
 
   .service-card p,
+  .service-points,
   .review-card p,
   .belief-list p,
   .feature-panel p,
   .price-card p,
   .faq-list p {
     color: var(--kuri-grey);
+  }
+
+  .service-points {
+    display: grid;
+    gap: 7px;
+    margin: 16px 0 24px;
+    padding-left: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .service-points li::marker {
+    color: var(--kuri-red);
   }
 
   .service-card .button,
@@ -681,9 +724,8 @@ import Footer from "../components/Footer.astro";
       grid-template-columns: 1fr 1fr;
     }
 
-    .proof-grid {
-      grid-template-columns: repeat(5, minmax(150px, 1fr));
-      overflow-x: auto;
+    .trust-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .service-card.featured {
@@ -709,18 +751,35 @@ import Footer from "../components/Footer.astro";
       grid-template-columns: 1fr;
     }
 
-    .proof-grid {
-      grid-template-columns: 1fr;
-      gap: 0;
-      overflow-x: visible;
+    .trust-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .service-card.featured {
       grid-column: auto;
     }
 
-    .proof-item {
-      border-bottom: 1px solid rgb(255 255 255 / 16%);
+    .trust-item {
+      min-height: 78px;
+      padding: 15px 8px;
+    }
+
+    .trust-item span {
+      font-size: 0.8rem;
+    }
+
+    .service-card,
+    .review-card {
+      padding: 20px;
+    }
+
+    .service-image {
+      margin: -20px -20px 18px;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     .cta-row {

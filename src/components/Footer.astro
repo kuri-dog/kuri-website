@@ -1,5 +1,6 @@
 ---
 const year = new Date().getFullYear();
+const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+City+Doggy+Daycare+and+Raw+Food,+473+Saint+Asaph+Street,+Phillipstown,+Christchurch";
 ---
 
 <footer class="footer">
@@ -32,7 +33,7 @@ const year = new Date().getFullYear();
       <h3>Contact us</h3>
       <a class="contact-line" href="tel:033555874">03 355 5874</a>
       <a class="contact-line" href="mailto:reception@kuri.co.nz">reception@kuri.co.nz</a>
-      <span class="contact-line">473 Saint Asaph Street, Phillipstown, Christchurch 8011, New Zealand</span>
+      <a class="contact-line" href={googleBusinessUrl} target="_blank" rel="noopener">473 Saint Asaph Street, Phillipstown, Christchurch 8011, New Zealand</a>
       <div class="map-embed">
         <iframe
           title="Kuri location map"
@@ -41,7 +42,7 @@ const year = new Date().getFullYear();
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
-      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=473+Saint+Asaph+Street,+Christchurch" target="_blank" rel="noopener">Open in Google Maps</a>
+      <a class="map-link" href={googleBusinessUrl} target="_blank" rel="noopener">Open in Google Maps</a>
     </div>
 
     <div>
@@ -50,7 +51,7 @@ const year = new Date().getFullYear();
       <span class="hours-line">City Centre (Sales)</span>
       <span class="hours-line">Mon to Fri - 7am to 6pm</span>
       <span class="hours-line">Sat - 10am to 2pm (store only)</span>
-      <a class="review-badge" href="https://www.google.com/search?q=Kuri+City+Christchurch+reviews" target="_blank" rel="noopener" aria-label="Read Kuri Google reviews">
+      <a class="review-badge" href={googleBusinessUrl} target="_blank" rel="noopener" aria-label="Read Kuri Google Business reviews">
         <span class="google-g" aria-hidden="true">G</span>
         <span class="review-score">4.9</span>
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>

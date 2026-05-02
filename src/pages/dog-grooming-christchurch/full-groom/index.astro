@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Full Groom Christchurch | Kuri City"
+  description="Full dog groom appointments in Christchurch at Kuri City. Bath, dry, brush-out, clip or style, face, feet and finishing tidy."
+  canonical="/dog-grooming-christchurch/full-groom/"
+>
+  <Header />
+  <main>
+    <section class="sub-hero">
+      <div class="wrap">
+        <p>Dog grooming Christchurch</p>
+        <h1>Full Groom</h1>
+        <span>Bath, dry, brush-out, clip or style, face, feet and finishing tidy.</span>
+        <div class="actions">
+          <a class="button" href="/contact/?service=grooming&option=full-groom">Book</a>
+          <a class="button secondary" href="/dog-grooming-christchurch/">All Grooming Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .sub-hero {
+    min-height: 62vh;
+    display: grid;
+    align-items: end;
+    padding: 148px 0 70px;
+    background: linear-gradient(90deg, rgb(27 27 27 / 90%), rgb(27 27 27 / 46%)), url("/images/grooming-hero.webp") center right / cover no-repeat;
+    color: var(--kuri-white);
+  }
+
+  .sub-hero p {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 76%);
+  }
+
+  .sub-hero span {
+    display: block;
+    max-width: 720px;
+    color: rgb(255 255 255 / 86%);
+    font-size: 1.2rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+</style>

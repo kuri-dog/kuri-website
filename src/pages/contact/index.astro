@@ -1,0 +1,336 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+City+Doggy+Daycare+and+Raw+Food,+473+Saint+Asaph+Street,+Phillipstown,+Christchurch";
+---
+
+<BaseLayout
+  title="Contact Kuri | Book or Talk to Kuri"
+  description="Contact Kuri in Christchurch. Book grooming, daycare, walking or training, ask about raw dog food, or talk to the team at 473 Saint Asaph Street."
+  canonical="/contact/"
+>
+  <Header />
+  <main>
+    <section class="contact-hero">
+      <div class="wrap">
+        <p class="eyebrow">Contact Kuri</p>
+        <h1>Book or talk to Kuri</h1>
+        <p>Tell us what your dog needs. We will help you find the right service, appointment or next step.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section">
+      <div class="wrap contact-grid">
+        <section class="enquiry-card" aria-labelledby="enquiry-heading">
+          <span class="context-label" id="serviceContext">General Kuri enquiry</span>
+          <h2 id="enquiry-heading">Send us the details</h2>
+          <div class="form-grid">
+            <label>
+              Service
+              <input id="serviceField" type="text" value="General enquiry" />
+            </label>
+            <label>
+              Dog name
+              <input id="dogName" type="text" autocomplete="off" />
+            </label>
+            <label>
+              Your name
+              <input id="ownerName" type="text" autocomplete="name" />
+            </label>
+            <label>
+              Phone or email
+              <input id="contactDetail" type="text" autocomplete="email" />
+            </label>
+            <label class="full">
+              Message
+              <textarea id="messageField" rows="6"></textarea>
+            </label>
+          </div>
+          <div class="contact-actions">
+            <a class="button" id="emailEnquiry" href="mailto:reception@kuri.co.nz">Email Kuri</a>
+            <a class="button outline-dark" href="tel:+6433555874">Call 03 355 5874</a>
+          </div>
+        </section>
+
+        <aside class="contact-panel">
+          <h2>City Centre</h2>
+          <div class="contact-lines">
+            <a href="tel:+6433555874">03 355 5874</a>
+            <a href="mailto:reception@kuri.co.nz">reception@kuri.co.nz</a>
+            <a href={googleBusinessUrl} target="_blank" rel="noopener">473 Saint Asaph Street, Phillipstown, Christchurch 8011</a>
+          </div>
+          <div class="hours">
+            <strong>Opening hours</strong>
+            <span>Mon to Fri - 7am to 6pm</span>
+            <span>Sat - 10am to 2pm (store only)</span>
+          </div>
+          <a class="review-row" href={googleBusinessUrl} target="_blank" rel="noopener" aria-label="Read Kuri Google Business reviews">
+            <span class="g">G</span>
+            <span class="score">4.9</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>208 reviews</span>
+          </a>
+          <div class="map">
+            <iframe
+              title="Kuri location map"
+              src="https://www.google.com/maps?q=473%20Saint%20Asaph%20Street%2C%20Christchurch&z=15&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <a class="map-link" href={googleBusinessUrl} target="_blank" rel="noopener">Open in Google Maps</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script is:inline>
+    const optionLabels = {
+      "full-groom": "Full Groom",
+      "bath-and-tidy": "Bath and Tidy",
+      "puppy-groom": "Puppy Groom",
+      "additional-services": "Additional Services",
+    };
+
+    const serviceLabels = {
+      grooming: "Grooming",
+      daycare: "Doggy Daycare",
+      walking: "Dog Walking",
+      training: "Dog Training",
+      raw: "Raw Dog Food",
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service") || "";
+    const option = params.get("option") || "";
+    const serviceLabel = serviceLabels[service] || "General Kuri";
+    const optionLabel = optionLabels[option] || "";
+    const contextText = optionLabel ? `${serviceLabel} enquiry: ${optionLabel}` : `${serviceLabel} enquiry`;
+
+    const context = document.querySelector("#serviceContext");
+    const serviceField = document.querySelector("#serviceField");
+    const dogName = document.querySelector("#dogName");
+    const ownerName = document.querySelector("#ownerName");
+    const contactDetail = document.querySelector("#contactDetail");
+    const messageField = document.querySelector("#messageField");
+    const emailEnquiry = document.querySelector("#emailEnquiry");
+
+    if (context) context.textContent = contextText;
+    if (serviceField) serviceField.value = contextText;
+
+    const updateEmail = () => {
+      if (!emailEnquiry) return;
+      const body = [
+        `Service: ${serviceField?.value || contextText}`,
+        `Dog name: ${dogName?.value || ""}`,
+        `Owner name: ${ownerName?.value || ""}`,
+        `Phone or email: ${contactDetail?.value || ""}`,
+        "",
+        messageField?.value || "",
+      ].join("\n");
+      emailEnquiry.href = `mailto:reception@kuri.co.nz?subject=${encodeURIComponent(contextText)}&body=${encodeURIComponent(body)}`;
+    };
+
+    [serviceField, dogName, ownerName, contactDetail, messageField].forEach((field) => {
+      field?.addEventListener("input", updateEmail);
+    });
+    updateEmail();
+  </script>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    padding: 148px 0 70px;
+    background:
+      linear-gradient(90deg, rgb(27 27 27 / 92%) 0%, rgb(27 27 27 / 72%) 55%, rgb(27 27 27 / 32%) 100%),
+      url("/images/grooming-hero.webp") center right / cover no-repeat;
+    color: var(--kuri-white);
+  }
+
+  .eyebrow {
+    margin-bottom: 14px;
+    color: rgb(255 255 255 / 76%);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .contact-hero p:not(.eyebrow) {
+    max-width: 680px;
+    color: rgb(255 255 255 / 86%);
+    font-size: 1.18rem;
+  }
+
+  .contact-section {
+    background: var(--kuri-light);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .enquiry-card,
+  .contact-panel {
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 6%);
+  }
+
+  .enquiry-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: var(--kuri-white);
+    border: 1px solid var(--kuri-line);
+  }
+
+  .context-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--kuri-red);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .form-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  label {
+    display: grid;
+    gap: 7px;
+    color: var(--kuri-ink);
+    font-weight: 800;
+  }
+
+  .full {
+    grid-column: 1 / -1;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--kuri-line);
+    border-radius: 6px;
+    padding: 12px 13px;
+    color: var(--kuri-ink);
+    font: inherit;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .button.outline-dark {
+    background: transparent;
+    color: var(--kuri-ink);
+    border-color: var(--kuri-ink);
+  }
+
+  .contact-panel {
+    padding: 30px;
+    background: var(--kuri-ink);
+    color: var(--kuri-white);
+  }
+
+  .contact-panel h2 {
+    margin-bottom: 18px;
+  }
+
+  .contact-lines,
+  .hours {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .contact-lines a,
+  .hours span,
+  .map-link {
+    color: rgb(255 255 255 / 78%);
+    text-decoration: none;
+  }
+
+  .contact-lines a:hover,
+  .map-link:hover {
+    color: var(--kuri-white);
+    text-decoration: underline;
+  }
+
+  .hours strong {
+    color: var(--kuri-white);
+  }
+
+  .review-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 22px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .g {
+    color: var(--kuri-red);
+    font-size: 1.85rem;
+    font-weight: 900;
+  }
+
+  .score,
+  .stars {
+    color: #f4b400;
+    font-size: 1.5rem;
+  }
+
+  .map {
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 14%);
+    border-radius: 8px;
+    background: var(--kuri-charcoal);
+  }
+
+  .map iframe {
+    display: block;
+    width: 100%;
+    min-height: 280px;
+    border: 0;
+  }
+
+  .map-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 900;
+  }
+
+  @media (max-width: 860px) {
+    .contact-grid,
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-actions {
+      flex-direction: column;
+    }
+
+    .enquiry-card,
+    .contact-panel {
+      height: auto;
+    }
+  }
+</style>

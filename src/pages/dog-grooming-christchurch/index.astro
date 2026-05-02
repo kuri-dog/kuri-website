@@ -1,0 +1,371 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const services = [
+  {
+    title: "Full Groom",
+    slug: "full-groom",
+    text: "A complete coat reset for dogs who need more than a wash. Bath, dry, brush-out, clip or style, face, feet and finishing tidy.",
+    moreHref: "/dog-grooming-christchurch/full-groom/",
+  },
+  {
+    title: "Bath and Tidy",
+    slug: "bath-and-tidy",
+    text: "A practical freshen-up between full grooms. Ideal for coats that need a wash, dry, brush and tidy without a full clip.",
+    moreHref: "/dog-grooming-christchurch/bath-and-tidy/",
+  },
+  {
+    title: "Puppy Groom",
+    slug: "puppy-groom",
+    text: "A gentle first grooming experience for puppies. Short, calm appointments that help young dogs build confidence.",
+    moreHref: "/dog-grooming-christchurch/puppy-groom/",
+  },
+  {
+    title: "Additional Services",
+    slug: "additional-services",
+    text: "Smaller grooming needs such as nail trims, hygiene tidy areas, coat add-ons and quick maintenance services.",
+    moreHref: "/dog-grooming-christchurch/additional-services/",
+  },
+];
+---
+
+<BaseLayout
+  title="Dog Grooming Christchurch | Kuri City"
+  description="Calm, practical dog grooming in Christchurch for dogs of all sizes. Full grooms, bath and tidy services, puppy grooms and additional grooming services from Kuri."
+  canonical="/dog-grooming-christchurch/"
+>
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Dog Grooming Christchurch",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Kuri City",
+        telephone: "+64 3 355 5874",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "473 Saint Asaph Street",
+          addressLocality: "Christchurch",
+          addressCountry: "NZ",
+        },
+      },
+      areaServed: "Christchurch",
+      serviceType: "Dog grooming",
+    })} />
+  </Fragment>
+
+  <Header />
+  <main>
+    <section class="service-hero">
+      <div class="wrap service-hero-grid">
+        <div>
+          <p class="eyebrow">Christchurch dog grooming</p>
+          <h1>Dog Grooming Christchurch</h1>
+          <p class="hero-copy">Careful handling, healthy coats and tidy dogs. Kuri grooming is calm, practical and built around dogs leaving relaxed, not rushed.</p>
+          <div class="hero-actions">
+            <a class="button" href="/contact/?service=grooming">Book a Groom</a>
+            <a class="button secondary" href="#grooming-services">View Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Grooming proof points">
+          <strong>4.9</strong>
+          <span>Google rating from 208 reviews</span>
+          <strong>All sizes</strong>
+          <span>Grooming for small, medium and large dogs</span>
+          <strong>City Centre</strong>
+          <span>473 Saint Asaph Street, Phillipstown</span>
+        </aside>
+      </div>
+    </section>
+
+    <section id="grooming-services" class="section">
+      <div class="wrap section-head center">
+        <h2>Choose the grooming service your dog needs</h2>
+        <p class="lead">Start with the right appointment type, then book or read the detail before you decide.</p>
+      </div>
+
+      <div class="wrap grooming-card-grid">
+        {services.map((service) => (
+          <article class="grooming-card">
+            <div class="card-image">
+              <img src="/images/grooming-hero.webp" alt={`Dog grooming at Kuri - ${service.title}`} loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+              <div class="card-actions">
+                <a class="button" href={`/contact/?service=grooming&option=${service.slug}`}>Book</a>
+                <a class="button outline" href={service.moreHref}>More Info</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="wrap split">
+        <div>
+          <div class="section-head">
+            <h2>Grooming that pays attention to the dog in front of us.</h2>
+            <p class="lead">Some dogs need a tidy coat. Some need a slow introduction. Some need careful handling because grooming has been stressful before.</p>
+          </div>
+          <div class="care-list">
+            <div>
+              <h3>Calm handling</h3>
+              <p>We work at the dog's pace and keep appointments practical, tidy and clear.</p>
+            </div>
+            <div>
+              <h3>Coat health first</h3>
+              <p>Regular grooming helps catch matting, skin issues and coat changes earlier.</p>
+            </div>
+            <div>
+              <h3>Clear advice</h3>
+              <p>If your dog's coat needs a different plan, we will tell you plainly and help you choose the next step.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="booking-panel">
+          <span>Ready to talk?</span>
+          <h2>Book or ask what your dog needs.</h2>
+          <p>Tell us a little about your dog, their coat and what you are hoping for. We will help point you to the right grooming option.</p>
+          <a class="button light" href="/contact/?service=grooming">Book a Groom</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="wrap">
+        <div class="section-head center">
+          <h2>Dog grooming questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Do you groom large dogs?</summary>
+            <p>Yes. Kuri daycare is small-dog-only, but grooming is available for dogs of all sizes.</p>
+          </details>
+          <details>
+            <summary>How do I know whether my dog needs a full groom or a bath and tidy?</summary>
+            <p>If your dog needs a full clip, style change or more coat work, start with a full groom. If they mainly need a freshen-up between grooms, a bath and tidy may be enough.</p>
+          </details>
+          <details>
+            <summary>Can puppies come for grooming?</summary>
+            <p>Yes. Puppy grooms are designed to be gentle, shorter and confidence-building.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .service-hero {
+    min-height: 68vh;
+    display: grid;
+    align-items: end;
+    color: var(--kuri-white);
+    background:
+      linear-gradient(90deg, rgb(27 27 27 / 88%) 0%, rgb(27 27 27 / 62%) 50%, rgb(27 27 27 / 18%) 100%),
+      url("/images/grooming-hero.webp") center right / cover no-repeat;
+  }
+
+  .service-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    gap: 32px;
+    align-items: end;
+    padding: 148px 0 70px;
+  }
+
+  .eyebrow {
+    margin-bottom: 14px;
+    color: rgb(255 255 255 / 76%);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .service-hero h1 {
+    max-width: 720px;
+  }
+
+  .hero-copy {
+    max-width: 650px;
+    color: rgb(255 255 255 / 88%);
+    font-size: 1.2rem;
+  }
+
+  .hero-actions,
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .hero-panel,
+  .booking-panel {
+    border-radius: 8px;
+    background: rgb(27 27 27 / 82%);
+    color: var(--kuri-white);
+  }
+
+  .hero-panel {
+    display: grid;
+    gap: 8px;
+    padding: 28px;
+    border: 1px solid rgb(255 255 255 / 18%);
+  }
+
+  .hero-panel strong {
+    margin-top: 8px;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .hero-panel span {
+    color: rgb(255 255 255 / 72%);
+  }
+
+  .grooming-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .grooming-card {
+    overflow: hidden;
+    border: 1px solid var(--kuri-line);
+    border-radius: 8px;
+    background: var(--kuri-white);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  }
+
+  .card-image {
+    aspect-ratio: 4 / 3;
+    background: var(--kuri-light);
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 292px;
+    padding: 22px;
+  }
+
+  .card-body p,
+  .care-list p,
+  .booking-panel p,
+  .faq-list p {
+    color: var(--kuri-grey);
+  }
+
+  .card-actions {
+    margin-top: auto;
+  }
+
+  .button.outline {
+    background: transparent;
+    color: var(--kuri-red);
+    border-color: var(--kuri-red);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    gap: 38px;
+    align-items: center;
+  }
+
+  .care-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .care-list div {
+    padding: 20px;
+    border-left: 4px solid var(--kuri-red);
+    background: var(--kuri-white);
+  }
+
+  .booking-panel {
+    padding: 32px;
+    background: var(--kuri-charcoal);
+  }
+
+  .booking-panel span {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .booking-panel p {
+    color: rgb(255 255 255 / 76%);
+  }
+
+  .faq-section {
+    background: linear-gradient(180deg, var(--kuri-white) 0%, var(--kuri-light) 100%);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .faq-list details {
+    padding: 18px 22px;
+    border: 1px solid var(--kuri-line);
+    border-radius: 8px;
+    background: var(--kuri-white);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    font-weight: 900;
+  }
+
+  .faq-list p {
+    margin: 12px 0 0;
+  }
+
+  @media (max-width: 1060px) {
+    .grooming-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .care-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .service-hero-grid,
+    .split {
+      grid-template-columns: 1fr;
+    }
+
+    .grooming-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-actions,
+    .card-actions {
+      flex-direction: column;
+    }
+  }
+</style>

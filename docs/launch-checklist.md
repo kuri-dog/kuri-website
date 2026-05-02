@@ -6,7 +6,7 @@ This checklist controls the final launch from WordPress/HostGator to the static 
 
 - Back up current DNS records before any change.
 - Confirm MX, SPF, DKIM and DMARC records for email.
-- Confirm `shop.kuri.co.nz` remains separate and untouched.
+- Confirm `shop.kuri.co.nz` remains hosted on Shopify, with no DNS, hosting, proxy, or platform changes.
 - Confirm booking, mail and any third-party subdomains still resolve.
 - Keep WordPress live until launch has passed QA.
 - Keep a rollback copy of the previous DNS records.

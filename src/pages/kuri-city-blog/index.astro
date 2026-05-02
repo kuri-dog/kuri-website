@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import BlogCard from "../../components/BlogCard.astro";
+
+const posts = await Astro.glob("../../content/blog/*.md");
+const sortedPosts = posts
+  .map((post) => {
+    const data = post.frontmatter as {
+      title: string;
+      slug: string;
+      excerpt: string;
+      date: string;
+      category: string;
+      coverImage?: string;
+      coverAlt?: string;
+      featured?: boolean;
+    };
+
+    return {
+      ...data,
+      href: `/kuri-city-blog/${data.slug}/`,
+    };
+  })
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const featuredPost = sortedPosts.find((post) => post.featured) ?? sortedPosts[0];
+const morePosts = sortedPosts.filter((post) => post !== featuredPost);
+---
+
+<BaseLayout
+  title="Kuri City Blog | Dog Care Advice Christchurch"
+  description="Kuri City articles about small dog daycare, raw feeding, dog grooming, walking, and training in Christchurch."
+  canonical="/kuri-city-blog/"
+>
+  <Header />
+  <main>
+    <section class="blog-hero">
+      <div class="wrap blog-hero-inner">
+        <p class="blog-kicker">Updates and articles from Kuri</p>
+        <h1>Kuri City Blog</h1>
+        <p>Practical dog care advice from the Christchurch team behind Kuri. Small dog daycare, raw feeding, grooming, walking, and training in one place.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        {featuredPost && (
+          <BlogCard
+            title={featuredPost.title}
+            excerpt={featuredPost.excerpt}
+            date={featuredPost.date}
+            category={featuredPost.category}
+            href={featuredPost.href}
+            coverImage={featuredPost.coverImage}
+            coverAlt={featuredPost.coverAlt}
+            featured
+          />
+        )}
+
+        <div class="section-head blog-more-head">
+          <h2>More Kuri guides</h2>
+          <p class="lead">A clean blog structure now. Full WordPress article migration comes next.</p>
+        </div>
+
+        <div class="blog-grid">
+          {morePosts.map((post) => (
+            <BlogCard
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              category={post.category}
+              href={post.href}
+              coverImage={post.coverImage}
+              coverAlt={post.coverAlt}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    min-height: 48vh;
+    display: grid;
+    align-items: end;
+    color: var(--kuri-white);
+    background:
+      linear-gradient(90deg, rgb(27 27 27 / 90%) 0%, rgb(27 27 27 / 68%) 55%, rgb(27 27 27 / 28%) 100%),
+      url("/images/grooming-hero.webp") center right / cover no-repeat;
+  }
+
+  .blog-hero-inner {
+    padding: 138px 0 58px;
+  }
+
+  .blog-kicker {
+    margin-bottom: 14px;
+    color: rgb(255 255 255 / 78%);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .blog-hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(3rem, 7vw, 6.2rem);
+    line-height: 0.92;
+  }
+
+  .blog-hero p:not(.blog-kicker) {
+    max-width: 680px;
+    margin-bottom: 0;
+    color: rgb(255 255 255 / 86%);
+    font-size: 1.2rem;
+  }
+
+  .blog-more-head {
+    margin-top: 54px;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  @media (max-width: 980px) {
+    .blog-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

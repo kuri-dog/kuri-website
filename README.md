@@ -12,6 +12,20 @@ The current live WordPress site stays live until final launch approval. Do not c
 - Shop: `https://shop.kuri.co.nz/`
 - Booking portal: `https://kuri.portal.gingrapp.com/`
 
+## Shopify Shop Protection
+
+`https://shop.kuri.co.nz/` is the live Shopify store. It must stay hosted on Shopify.
+
+Do not:
+- move `shop.kuri.co.nz` to Netlify
+- change DNS records for `shop.kuri.co.nz`
+- proxy Shopify through the new static site
+- include `shop.kuri.co.nz` in production-domain launch changes
+- create wildcard redirects that could affect the Shopify subdomain
+
+The new Kuri website may link to the Shopify store. Old shop-related paths on `https://kuri.co.nz/`, such as `/shop/`, `/cart/`, `/checkout/`, and `/product/*`, may redirect to `https://shop.kuri.co.nz/`, but the Shopify subdomain itself must remain untouched.
+
+
 ## Local Workflow
 
 ```powershell

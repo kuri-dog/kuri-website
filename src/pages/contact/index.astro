@@ -2,8 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-
-const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+City+Doggy+Daycare+and+Raw+Food,+473+Saint+Asaph+Street,+Phillipstown,+Christchurch";
+import { site } from "../../data/site";
 ---
 
 <BaseLayout
@@ -49,38 +48,38 @@ const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+
             </label>
           </div>
           <div class="contact-actions">
-            <a class="button" id="emailEnquiry" href="mailto:reception@kuri.co.nz">Email Kuri</a>
-            <a class="button outline-dark" href="tel:+6433555874">Call 03 355 5874</a>
+            <a class="button" id="emailEnquiry" href={site.contact.emailHref} data-email={site.contact.email}>Email Kuri</a>
+            <a class="button outline-dark" href={site.contact.phoneHref}>Call {site.contact.phoneDisplay}</a>
           </div>
         </section>
 
         <aside class="contact-panel">
-          <h2>City Centre</h2>
+          <h2>{site.hours.locationLabel}</h2>
           <div class="contact-lines">
-            <a href="tel:+6433555874">03 355 5874</a>
-            <a href="mailto:reception@kuri.co.nz">reception@kuri.co.nz</a>
-            <a href={googleBusinessUrl} target="_blank" rel="noopener">473 Saint Asaph Street, Phillipstown, Christchurch 8011</a>
+            <a href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>
+            <a href={site.contact.emailHref}>{site.contact.email}</a>
+            <a href={site.contact.googleBusinessUrl} target="_blank" rel="noopener">{site.contact.addressLine}</a>
           </div>
           <div class="hours">
             <strong>Opening hours</strong>
-            <span>Mon to Fri - 7am to 6pm</span>
-            <span>Sat - 10am to 2pm (store only)</span>
+            <span>{site.hours.weekdays}</span>
+            <span>{site.hours.saturday}</span>
           </div>
-          <a class="review-row" href={googleBusinessUrl} target="_blank" rel="noopener" aria-label="Read Kuri Google Business reviews">
+          <a class="review-row" href={site.contact.googleBusinessUrl} target="_blank" rel="noopener" aria-label="Read Kuri Google Business reviews">
             <span class="g">G</span>
-            <span class="score">4.9</span>
+            <span class="score">{site.reviews.score}</span>
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span>208 reviews</span>
+            <span>{site.reviews.count} reviews</span>
           </a>
           <div class="map">
             <iframe
               title="Kuri location map"
-              src="https://www.google.com/maps?q=473%20Saint%20Asaph%20Street%2C%20Christchurch&z=15&output=embed"
+              src={site.contact.googleMapEmbedUrl}
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          <a class="map-link" href={googleBusinessUrl} target="_blank" rel="noopener">Open in Google Maps</a>
+          <a class="map-link" href={site.contact.googleBusinessUrl} target="_blank" rel="noopener">Open in Google Maps</a>
         </aside>
       </div>
     </section>
@@ -123,6 +122,7 @@ const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+
 
     const updateEmail = () => {
       if (!emailEnquiry) return;
+      const enquiryEmail = emailEnquiry.dataset.email || "reception@kuri.co.nz";
       const body = [
         `Service: ${serviceField?.value || contextText}`,
         `Dog name: ${dogName?.value || ""}`,
@@ -131,7 +131,7 @@ const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+
         "",
         messageField?.value || "",
       ].join("\n");
-      emailEnquiry.href = `mailto:reception@kuri.co.nz?subject=${encodeURIComponent(contextText)}&body=${encodeURIComponent(body)}`;
+      emailEnquiry.href = `mailto:${enquiryEmail}?subject=${encodeURIComponent(contextText)}&body=${encodeURIComponent(body)}`;
     };
 
     [serviceField, dogName, ownerName, contactDetail, messageField].forEach((field) => {

@@ -1,21 +1,22 @@
 ---
+import { site } from "../data/site";
+
 const year = new Date().getFullYear();
-const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+City+Doggy+Daycare+and+Raw+Food,+473+Saint+Asaph+Street,+Phillipstown,+Christchurch";
 ---
 
 <footer class="footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <div class="brand-lockup">
-        <strong>KURI</strong>
-        <span class="brand-tag">WE LOVE DOGS</span>
+        <strong>{site.name.toUpperCase()}</strong>
+        <span class="brand-tag">{site.tagline.toUpperCase()}</span>
       </div>
-      <p>KURI - We Love Dogs. Raw dog food, dog training, daycare, grooming and health care in Christchurch.</p>
+      <p>{site.description}</p>
       <div class="social-links" aria-label="Kuri social media">
-        <a class="social-chip" href="https://www.tiktok.com/@kuricitynz" target="_blank" rel="noopener" aria-label="TikTok">T</a>
-        <a class="social-chip" href="https://www.instagram.com/kuriwelovedogs/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a class="social-chip" href="https://www.facebook.com/KuriCityNZ/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        <a class="social-chip" href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest">P</a>
+        <a class="social-chip" href={site.social.tiktok} target="_blank" rel="noopener" aria-label="TikTok">T</a>
+        <a class="social-chip" href={site.social.instagram} target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a class="social-chip" href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a class="social-chip" href={site.social.pinterest} target="_blank" rel="noopener" aria-label="Pinterest">P</a>
       </div>
     </div>
 
@@ -23,46 +24,46 @@ const googleBusinessUrl = "https://www.google.com/maps/search/?api=1&query=Kuri+
       <h3>Important Links</h3>
       <a href="/terms-conditions/">Terms & Conditions</a>
       <a href="/privacy-policy/">Privacy Policy</a>
-      <a href="https://shop.kuri.co.nz/">Shop Kuri</a>
-      <a href="https://kuri.portal.gingrapp.com/">Book a Service</a>
+      <a href={site.urls.shop}>Shop Kuri</a>
+      <a href={site.urls.booking}>Book a Service</a>
       <a href="/dog-grooming-christchurch/">Dog Grooming</a>
       <a href="/raw-dog-food/">Raw Dog Food</a>
     </nav>
 
     <div>
       <h3>Contact us</h3>
-      <a class="contact-line" href="tel:033555874">03 355 5874</a>
-      <a class="contact-line" href="mailto:reception@kuri.co.nz">reception@kuri.co.nz</a>
-      <a class="contact-line" href={googleBusinessUrl} target="_blank" rel="noopener">473 Saint Asaph Street, Phillipstown, Christchurch 8011, New Zealand</a>
+      <a class="contact-line" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>
+      <a class="contact-line" href={site.contact.emailHref}>{site.contact.email}</a>
+      <a class="contact-line" href={site.contact.googleBusinessUrl} target="_blank" rel="noopener">{site.contact.addressLineFull}</a>
       <div class="map-embed">
         <iframe
           title="Kuri location map"
-          src="https://www.google.com/maps?q=473%20Saint%20Asaph%20Street%2C%20Christchurch&z=15&output=embed"
+          src={site.contact.googleMapEmbedUrl}
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
-      <a class="map-link" href={googleBusinessUrl} target="_blank" rel="noopener">Open in Google Maps</a>
+      <a class="map-link" href={site.contact.googleBusinessUrl} target="_blank" rel="noopener">Open in Google Maps</a>
     </div>
 
     <div>
       <h3>Opening hours</h3>
-      <span class="hours-line"><strong>City Centre</strong></span>
-      <span class="hours-line">City Centre (Sales)</span>
-      <span class="hours-line">Mon to Fri - 7am to 6pm</span>
-      <span class="hours-line">Sat - 10am to 2pm (store only)</span>
-      <a class="review-badge" href={googleBusinessUrl} target="_blank" rel="noopener" aria-label="Read Kuri Google Business reviews">
+      <span class="hours-line"><strong>{site.hours.locationLabel}</strong></span>
+      <span class="hours-line">{site.hours.salesLabel}</span>
+      <span class="hours-line">{site.hours.weekdays}</span>
+      <span class="hours-line">{site.hours.saturday}</span>
+      <a class="review-badge" href={site.contact.googleBusinessUrl} target="_blank" rel="noopener" aria-label="Read Kuri Google Business reviews">
         <span class="google-g" aria-hidden="true">G</span>
-        <span class="review-score">4.9</span>
+        <span class="review-score">{site.reviews.score}</span>
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-number">208</span>
+        <span class="review-number">{site.reviews.count}</span>
         <span class="review-label">Read our reviews</span>
       </a>
     </div>
   </div>
 
   <div class="wrap footer-bottom">
-    <span>&copy; {year} Kuri and Co Limited</span>
+    <span>&copy; {year} {site.legalName}</span>
     <span><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-conditions/">Terms & Conditions</a></span>
   </div>
 </footer>

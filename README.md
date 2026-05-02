@@ -1,27 +1,66 @@
-# Kuri Site
+# Kuri Website
 
-New static website build for `kuri.co.nz`.
+Static rebuild of `kuri.co.nz` using Astro, GitHub and Netlify.
 
-## Stack
+The current live WordPress site stays live until final launch approval. Do not change DNS, disconnect WordPress, or connect the production domain until the launch checklist is complete.
 
-- Astro
-- Netlify
-- GitHub
+## Important URLs
 
-## Workflow
+- Production domain: `https://kuri.co.nz`
+- Netlify preview: `https://lively-gumdrop-0562de.netlify.app`
+- GitHub repo: `https://github.com/kuri-dog/kuri-website`
+- Shop: `https://shop.kuri.co.nz/`
+- Booking portal: `https://kuri.portal.gingrapp.com/`
 
-1. Make changes in a branch.
-2. Netlify creates a Deploy Preview.
-3. Review the preview.
-4. Merge approved changes to production.
+## Local Workflow
 
-## Migration Controls
+```powershell
+cd "C:\Users\jlh\Downloads\kuri-website-push"
+$env:ASTRO_TELEMETRY_DISABLED="1"
+npm.cmd run dev -- --host 0.0.0.0 --port 4324
+```
 
-Project controls live in:
+Open `http://localhost:4324/`.
+
+Before committing:
+
+```powershell
+$env:ASTRO_TELEMETRY_DISABLED="1"
+npm.cmd run check
+```
+
+## Git Workflow
+
+```powershell
+git status
+git add <changed files>
+git commit -m "Short description"
+git push
+```
+
+Netlify should build from the pushed `main` branch and create a new preview.
+
+Do not commit:
+
+- `node_modules/`
+- `.astro/`
+- `dist/`
+- `astro-dev-*.log`
+
+## Project Controls
+
+Repo-level controls:
+
+- `docs/page-rollout-plan.md`
+- `docs/launch-checklist.md`
+- `src/data/site.ts`
+- `public/_redirects`
+
+Migration discovery controls live outside the repo in:
 
 `../Migration-Discovery/`
 
-Key files:
+Key source-of-truth files:
 
 - `migration-master.csv`
 - `redirect-map-first-pass.csv`
@@ -29,4 +68,3 @@ Key files:
 - `global-footer-spec.md`
 - `analytics-tracking-plan.md`
 - `access-checklist.md`
-
